@@ -15,8 +15,9 @@
         </div>
 
         <div class="col-auto">
-            <span  class="form-text"
-                   *ngIf="validacionCampo('nombre')">
+            <span   class="form-text"
+                    error-msg
+                    *ngIf="validacionCampo('nombre')">
                 Este campo es requerido
             </span>
         </div>
