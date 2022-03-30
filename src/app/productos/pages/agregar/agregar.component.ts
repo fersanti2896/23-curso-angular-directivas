@@ -5,10 +5,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   selector: 'app-agregar',
   templateUrl: './agregar.component.html',
   styles: [
+    `
+      button {
+        margin: 5px;
+      }
+    `
   ]
 })
 export class AgregarComponent {
-  color: string = 'red';
+  color : string = 'red';
   texto1: string = 'Fer Santi'
 
   miFormulario: FormGroup = this.fb.group({
@@ -22,10 +27,12 @@ export class AgregarComponent {
   }
 
   cambiarNombre() {
-    this.texto1 = 'Sarahi'  
+    this.texto1 = Math.random().toString();  
   }
 
   cambiarColor() {
-    this.color = 'green';
+    const color = "#xxxxxx".replace(/x/g, y=>(Math.random()*16|0).toString(16));
+
+    this.color = color;
   }
 }
